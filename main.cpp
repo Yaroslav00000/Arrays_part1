@@ -56,9 +56,33 @@ int main() {
 		}
 	}
 	cout << "Добуток парних елементів масиву = " << product_even_numbers << endl;
-	return 0;
-	int first_neg = -1, last_neg = -1, sum_between_neg = 0;
-	
+	int index_start = 0;
+	int index_end = 0;
+	int sum_between_neg = 0;
+	for (int i = 0; i < size; i++) {
+		if (arr[i] < 0) {
+			index_start = i;
+			break;
+		}
+	}
+	for (int i = size - 1; i >= 0; i--) {
+		if (arr[i] < 0) {
+			index_end = i;
+			break;
+		}
+	}
+	if (index_start > index_end)
+	{
+		for (int i = index_end + 1; i < index_start; i++) {
+			sum_between_neg += arr[i];
+		}
+	}
+	else
+	{
+		for (int i = index_start + 1; i < index_end; i++) {
+			sum_between_neg += arr[i];
+		}
+	}
 	cout << "Сума елементів масиву, розташованих між першим й останнім від'ємними елементами = " << sum_between_neg << endl;
     return 0;
 }
