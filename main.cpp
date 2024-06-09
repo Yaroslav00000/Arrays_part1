@@ -71,17 +71,8 @@ int main() {
 			break;
 		}
 	}
-	if (index_start > index_end)
-	{
-		for (int i = index_end + 1; i < index_start; i++) {
-			sum_between_neg += arr[i];
-		}
-	}
-	else
-	{
-		for (int i = index_start + 1; i < index_end; i++) {
-			sum_between_neg += arr[i];
-		}
+	for (int i = index_start + 1; i < index_end; i++) {
+		sum_between_neg += arr[i];
 	}
 	cout << "Сума елементів масиву, розташованих між першим й останнім від'ємними елементами = " << sum_between_neg << endl;
     return 0;
